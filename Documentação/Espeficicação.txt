@@ -1,0 +1,126 @@
+﻿//****************************Passo 1
+Alisson - Cadastro de Animais
+	## Responável: ALISSON ##
+  (caminho: menu > cadastro > animais)
+   - Nome (string)
+   - Regiao (string)
+   - Datanascimento - (datetime)
+   - peso - (double)
+   - especie (int) -> combobox (Cadastro de especie)
+   - tratador (int) -> combobox (Cadastro de Tratador)
+   - equipe (int) -> lista -> deixar selecionar de 1 a 3 tratadores
+
+
+Cadastro de especie 
+  ## Responável: ALISSON ##
+   - Nome (string)
+
+Cadastro de tratador
+	(caminho: menu > cadastro > tratador)
+    - combobox Funcionário -> Cadastro de Funcionario
+
+Cadastro de Funcionario 
+## Responável: RAPHAEL ##
+	(caminho: menu > cadastro > funcionario)
+    - Matricula
+    - Nome
+    - Endereço 
+    - Telefone.
+
+
+Tabelas
+[X] Alisson - Animal
+   AnimalId (PK)
+   Nome (varchar(70))
+   Regiao (varchar(256))
+   Datanascimento (datetime)
+   Peso (float)
+   EspecieId (FK) -> Especie
+
+[X] Alisson - Especie
+	EspecieId (PK)
+	Nome (varchar(70)) (UK)
+
+[X] Alisson - Tratador
+	TratadorId (PK)
+	FuncionarioId (FK) -> Funcionario
+
+[X] Alisson - AnimalTratador	
+	AnimalId (FK, PK) -> Animal
+	TratadorId (FK, PK) -> Tratador
+	Reponsavel (bit) default 0
+
+[X] Alisson - Funcionario
+	FuncionarioId (PK)
+	Matricula (varchar(70))
+        Nome varchar(70)
+        Endereco (varchar(256))
+        Telefone (varchar(20))
+
+
+
+//*********************************** Passo 2
+
+4 Procedimento de Roina de Tratamento
+   - Animal (int) -> combobox (1. cadastro de animais)
+   - Identity
+   - Data de validade (datetime)
+   - Tarefas diárias (grid) -> add -> Cadastro de tarefas
+   - Receitas(grid) -> add -> 4.2. Cadastro de receitas
+
+4.1 Cadastro de tarefas
+    - identity
+    - Descricao (string)
+
+4.2. Cadastro de receitas
+    - Veterinatio (int) -> 5. Cadastro de veterinario
+    - Data (datetime)
+    - Observacao (string)
+    - Medicamento (grid) -> ReceitaMedicamento -> Cadatro de medicamento
+        - Dose e frequencia
+
+5. Cadastro de veterinario
+	- Identity
+    - Nome completo
+     - Cadastro de uncionario
+     - Numero no Conselho Regional de Medicina Veterinária e a 
+     - data na qual o registro foi realizado.
+
+6. Cadastro de medicamento
+     - Nome 
+     - Identity 
+
+/*********************************Passo 3
+    
+
+7. Boletim diario
+     - Aimal
+     - Tratador (pega sozinho pelo animal)
+     - Data atual
+     - Parecer (combobox, saudavel, estado-alerta, doente)
+     - Observacoes
+
+8. Marcacao de consulta
+    - Emerciia ou atencedencia
+    - Data e hora agendado
+    - data e hora efetiva
+    - Veterinario
+    - Animal
+
+9. Registor clinico
+   - Diagnostico
+    - Tipo de atendimento (preventivo, emergencia)
+    - obervações
+    - vascrinas (cadastro de varcinas)
+
+10. Cadastro de vascinas
+     - Nome 
+     - Identity
+
+
+11. Boletim de saude (relatorio)
+    - Mostra todos os registros clinicos do animal 
+
+
+
+

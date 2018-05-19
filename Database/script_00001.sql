@@ -1,0 +1,22 @@
+CREATE DATABASE SysZoo;
+
+USE SysZoo;
+
+CREATE TABLE Especie (
+   EspecieId INT NOT NULL AUTO_INCREMENT,
+   Nome VARCHAR(70) NOT NULL,
+   PRIMARY KEY (EspecieId)
+);
+
+CREATE TABLE Animal (
+	AnimalId INT NOT NULL AUTO_INCREMENT,
+    Nome VARCHAR(70) NOT NULL,
+    Regiao VARCHAR(200) NOT NULL,
+    DataNascimento DATE NOT NULL,
+    Peso FLOAT NOT NULL,
+    EspecieId INT NOT NULL,
+    PRIMARY KEY (AnimalId)
+);
+
+ALTER TABLE Animal ADD CONSTRAINT Animal_Especie_FK FOREIGN KEY (EspecieId) REFERENCES Especie(EspecieId)
+
